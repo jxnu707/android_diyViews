@@ -75,6 +75,8 @@ public class MainActivity extends Activity {
 				view=convertView;
 				
 			}
+			
+			
 //			view.setOnClickListener(new OnClickListener() {
 //				
 //				@Override
