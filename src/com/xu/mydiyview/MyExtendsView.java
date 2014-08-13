@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -97,7 +98,11 @@ public class MyExtendsView extends ListView implements OnTouchListener,OnGesture
 			float velocityY) {
 		if(!isButtonShown&&(Math.abs(velocityX)>Math.abs(velocityY))){//如果按钮没显示 并且 手势是左右滑动
 			deleteButton=LayoutInflater.from(getContext()).inflate(R.layout.delete_button,null);
-			deleteButton.setOnClickListener(new View.OnClickListener() {
+			//deleteButton是R.layout.delete_button的实例 是一个layout 直接在它上面添加onClick是无效的
+			//找到deleteButton里的button 添加onClick
+			Button b_delete=(Button) deleteButton.findViewById(R.id.delete_button);
+			//deleteButton.setOnClickListener();
+			b_delete.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View v) {
