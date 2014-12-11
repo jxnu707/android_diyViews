@@ -107,11 +107,11 @@ public class MyExtendsView extends ListView implements OnTouchListener,OnGesture
 				@Override
 				public void onClick(View v) {
 					Log.i("MyListView", "button clicked!!");
-					System.out.println("MyListView button clicked!!");
 					itemList.removeView(deleteButton);
 					isButtonShown=false;
 					deleteButton=null;
 					listener.onDelete(itemPosition);
+					Log.i("MyListView", "button removed");
 				}
 			});
 			//将滑动的条目View转化成Viewgroup 作为容器来准备添加deleteButton getChildAt（position） position指的是在屏幕里的位置 即相对位置
@@ -124,6 +124,18 @@ public class MyExtendsView extends ListView implements OnTouchListener,OnGesture
 		    params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
 		    params.addRule(RelativeLayout.CENTER_IN_PARENT);
 		    itemList.addView(deleteButton,params);
+		    Log.i("deleteButton.VISIBLE",deleteButton.VISIBLE+"");
+		    Log.i("View.VISIBLE.",View.VISIBLE+"");
+		    Log.i("deleteButton.toString()",deleteButton.toString());
+		    Log.i("listitem count", itemList.getChildCount()+"");
+		    for(int i=0;i<itemList.getChildCount();i++)
+		    	Log.i("every childview in itemlist", itemList.getChildAt(i).toString());
+		    
+		    int tag=itemPosition;
+		    deleteButton.setTag(tag);
+		    itemList.setTag(tag);
+		    Log.i("ListView", ""+tag);
+		    
 		    isButtonShown=true;
 		}
 		return false;

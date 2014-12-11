@@ -26,10 +26,19 @@
 
 </com.xu.mydiyview.MyCombinationView>
 -->
-
+<!--  
 <com.xu.mydiyview.MyExtendsView 
     	android:id="@+id/my_list_view"  
         android:layout_width="match_parent"  
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
     ></com.xu.mydiyview.MyExtendsView>
+-->
+
+<com.xu.mydiyview.listView.MyListView
+    android:id="@+id/mylistview"
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"
+    ></com.xu.mydiyview.listView.MyListView>
+    
+    
 </RelativeLayout>
